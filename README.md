@@ -2,7 +2,7 @@
 
 Calculadora web simples e moderna, com histórico de cálculos e tema claro/escuro.
 
-![Calculadora](screenshot.png)
+![Calculadora](assets/.png)
 
 ## Funcionalidades
 
