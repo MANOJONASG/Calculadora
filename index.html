@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f6fb">
+    <meta name="description" content="Uma calculadora simples e interativa, com suporte ao teclado e histórico de cálculos.">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Início da calculadora">
+          <span class="brand-mark" aria-hidden="true">∑</span>
+          <span>Calculadora</span>
+        </a>
+        <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Mudar para tema escuro" title="Mudar tema">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z"></path></svg>
+        </button>
+      </header>
+
+      <section class="workspace" aria-label="Área da calculadora">
+        <section class="calculator card" aria-label="Calculadora">
+          <div class="display" aria-live="polite" aria-atomic="true">
+            <p class="display-expression" id="expression" aria-hidden="true"></p>
+            <p class="display-value" id="display" role="status">0</p>
+          </div>
+
+          <div class="keypad" aria-label="Teclas da calculadora">
+            <button class="key key-utility" type="button" data-action="clear" aria-label="Limpar tudo">AC</button>
+            <button class="key key-utility" type="button" data-action="sign" aria-label="Inverter sinal">+/−</button>
+            <button class="key key-utility" type="button" data-action="percent" aria-label="Porcentagem">%</button>
+            <button class="key key-operator" type="button" data-operator="divide" aria-label="Dividir">÷</button>
+
+            <button class="key" type="button" data-digit="7">7</button>
+            <button class="key" type="button" data-digit="8">8</button>
+            <button class="key" type="button" data-digit="9">9</button>
+            <button class="key key-operator" type="button" data-operator="multiply" aria-label="Multiplicar">×</button>
+
+            <button class="key" type="button" data-digit="4">4</button>
+            <button class="key" type="button" data-digit="5">5</button>
+            <button class="key" type="button" data-digit="6">6</button>
+            <button class="key key-operator" type="button" data-operator="subtract" aria-label="Subtrair">−</button>
+
+            <button class="key" type="button" data-digit="1">1</button>
+            <button class="key" type="button" data-digit="2">2</button>
+            <button class="key" type="button" data-digit="3">3</button>
+            <button class="key key-operator" type="button" data-operator="add" aria-label="Somar">+</button>
+
+            <button class="key key-utility" type="button" data-action="sqrt" aria-label="Raiz quadrada">√</button>
+            <button class="key" type="button" data-digit="0">0</button>
+            <button class="key" type="button" data-action="decimal" aria-label="Vírgula decimal">.</button>
+            <button class="key key-equals" type="button" data-action="equals" aria-label="Igual">=</button>
+          </div>
+          <p class="keyboard-hint"><kbd>Enter</kbd> calcular <span aria-hidden="true">·</span> <kbd>⌫</kbd> apagar <span aria-hidden="true">·</span> <kbd>Esc</kbd> limpar<br><kbd>F9</kbd> sinal <span aria-hidden="true">·</span> <kbd>R</kbd> raiz quadrada <span aria-hidden="true">·</span> <kbd>%</kbd> porcentagem</p>
+        </section>
+
+        <aside class="history card" aria-labelledby="history-heading">
+          <div class="history-header">
+            <div>
+              <p class="eyebrow">SEUS CÁLCULOS</p>
+              <h2 id="history-heading">Histórico</h2>
+            </div>
+            <button class="text-button" id="clear-history" type="button" disabled>Limpar</button>
+          </div>
+          <div class="history-list" id="history-list" aria-live="polite">
+            <div class="empty-state" id="empty-history">
+              <span class="empty-icon" aria-hidden="true">↗</span>
+              <p>Seus cálculos aparecerão aqui.</p>
+            </div>
+          </div>
+          <p class="history-footnote">Selecione um resultado para usá-lo novamente</p>
+        </aside>
+      </section>
+      <footer class="footer">Clareza em cada cálculo.</footer>
+    </main>
+  </body>
+</html>
